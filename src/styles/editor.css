@@ -1,0 +1,40 @@
+.cv-editor {
+    width: 50vw;
+    background: #f7f7f7;
+    margin: 2.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+.cv-editor div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.cv-editor div h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+    margin: 0.5rem 0.6rem;
+}
+
+.cv-editor div textarea {
+    resize: none;
+}
+
+.cv-editor div input,
+.cv-editor div textarea {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid rgb(209, 209, 209);
+    font-family: 'Roboto', sans-serif;
+}
+
+.cv-editor div input:focus,
+.cv-editor div textarea:focus {
+    background: #f3f3f3;
+    border-color: rgb(180, 180, 180);
+}
