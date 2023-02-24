@@ -1,12 +1,14 @@
 import React from "react";
 
-class Aside extends React.Component {
+class Aside extends React.Component {    
     render() {
+        const { address, email, phone } = this.props;
+
         return(
             <div className="preview-aside">
-                <p>Address</p>
-                <p>Email</p>
-                <p>Phone</p>
+                <p>{address}</p>
+                <p>{email}</p>
+                <p>{phone}</p>
                 <h4>Skills</h4>
                 <ul>
                     <li>Skill 1</li>
