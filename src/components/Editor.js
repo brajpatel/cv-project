@@ -25,42 +25,32 @@ class Editor extends React.Component {
     }
 
     handleTitle(e) {
-        this.setState({
-            title: e.target.value
-        })
+        this.setState({ title: e.target.value })
     }
 
     handleForename(e) {
-        this.setState({
-            forename: e.target.value
-        })
+        this.setState({ forename: e.target.value })
     }
 
     handleSurname(e) {
-        this.setState({
-            surname: e.target.value
-        })
+        this.setState({ surname: e.target.value })
     }
 
     handleAddress(e) {
-        this.setState({
-            address: e.target.value
-        })
+        this.setState({ address: e.target.value })
     }
 
     handleEmail(e) {
-        this.setState({
-            email: e.target.value
-        })
+        this.setState({ email: e.target.value })
     }
 
     handlePhone(e) {
-        this.setState({
-            phone: e.target.value
-        })
+        this.setState({ phone: e.target.value })
     }
 
     render() {
+        const { title, forename, surname, address, email, phone } = this.state;
+
         return (
             <div>
                 <div className="cv-editor">
@@ -74,12 +64,12 @@ class Editor extends React.Component {
                     />
                 </div>
                 <Preview
-                    title={this.state.title}
-                    forename={this.state.forename}
-                    surname={this.state.surname}
-                    address={this.state.address}
-                    email={this.state.email}
-                    phone={this.state.phone}
+                    title={title}
+                    forename={forename}
+                    surname={surname}
+                    address={address}
+                    email={email}
+                    phone={phone}
                 />
             </div>
         )
