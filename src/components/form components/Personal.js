@@ -2,7 +2,7 @@ import React from "react";
 
 class Personal extends React.Component {
     render() {
-        const { handleTitle, handleForename, handleSurname, handleAddress, handleEmail, handlePhone } = this.props;
+        const { handleTitle, handleForename, handleSurname, handleAddress, handleEmail, handlePhone, handleDescription } = this.props;
 
         return (
             <div>
@@ -13,7 +13,7 @@ class Personal extends React.Component {
                 <input onChange={(e) => handleAddress(e)} placeholder="Address" type="text"></input>
                 <input onChange={(e) => handleEmail(e)} placeholder="Email" type="text"></input>
                 <input onChange={(e) => handlePhone(e)} placeholder="Phone Number" type="tel"></input>
-                <textarea rows="4" maxLength="300" placeholder="Description"></textarea>
+                <textarea onChange={(e) => handleDescription(e)} placeholder="Description (character limit: 300)" rows="4" maxLength="300"></textarea>
             </div>
         )
     }

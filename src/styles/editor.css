@@ -5,6 +5,9 @@
     border-radius: 8px;
     box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .cv-editor div {
@@ -13,10 +16,18 @@
     gap: 0.8rem;
 }
 
-.cv-editor div h2 {
+.cv-editor div h2,
+.cv-editor div h4 {
     font-family: 'Roboto', sans-serif;
     color: #222222;
-    margin: 0.5rem 0.6rem;
+}
+
+.cv-editor div h2 {
+    margin: 0.6rem 0.6rem 0 0.6rem;
+}
+
+.cv-editor div h4 {
+    margin: 0 0.6rem;
 }
 
 .cv-editor div textarea {
@@ -37,4 +48,14 @@
 .cv-editor div textarea:focus {
     background: #f3f3f3;
     border-color: rgb(180, 180, 180);
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    background-color: white;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 4px;
+    font-size: 1.2rem;
 }

@@ -1,9 +1,11 @@
 import '../styles/editor.css'
 import React from "react";
+import uniqid from "uniqid";
 import Personal from "./form components/Personal";
+import Education from './form components/Education';
 import Preview from './Preview';
 
-class Editor extends React.Component {
+class Main extends React.Component {
     constructor() {
         super();
 
@@ -13,7 +15,8 @@ class Editor extends React.Component {
             surname: 'Smith',
             address: '125 Top Lane',
             email: 'john-smith@email.com',
-            phone: '07123456789'
+            phone: '07123456789',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nam libero justo laoreet. Platea dictumst vestibulum rhoncus est pellentesque. Aenean euismod elementum nisi quis eleifend. Consectetur adipiscing elit ut aliquam curs.'
         }
 
         this.handleTitle = this.handleTitle.bind(this);
@@ -22,6 +25,7 @@ class Editor extends React.Component {
         this.handleAddress = this.handleAddress.bind(this);
         this.handleEmail = this.handleEmail.bind(this);
         this.handlePhone = this.handlePhone.bind(this);
+        this.handleDescription = this.handleDescription.bind(this);
     }
 
     handleTitle(e) {
@@ -48,8 +52,12 @@ class Editor extends React.Component {
         this.setState({ phone: e.target.value })
     }
 
+    handleDescription(e) {
+        this.setState({ description: e.target.value })
+    }
+
     render() {
-        const { title, forename, surname, address, email, phone } = this.state;
+        const { title, forename, surname, address, email, phone, description } = this.state;
 
         return (
             <div>
@@ -61,7 +69,9 @@ class Editor extends React.Component {
                         handleAddress={this.handleAddress}
                         handleEmail={this.handleEmail}
                         handlePhone={this.handlePhone}
+                        handleDescription={this.handleDescription}
                     />
+                    <Education/>
                 </div>
                 <Preview
                     title={title}
@@ -70,10 +80,11 @@ class Editor extends React.Component {
                     address={address}
                     email={email}
                     phone={phone}
+                    description={description}
                 />
             </div>
         )
     }
 }
 
-export default Editor;
+export default Main;

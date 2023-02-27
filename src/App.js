@@ -1,13 +1,13 @@
 import './styles/App.css';
 import Banner from './components/Banner';
-import Editor from './components/Editor';
+import Main from './components/Main';
 
 
 function App() {
   return (
     <div className="App">
       <Banner/>
-      <Editor/>
+      <Main/>
     </div>
   );
 }
