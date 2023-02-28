@@ -61,4 +61,25 @@
 
 .educations {
     display: flex;
+    gap: 0.6rem;
+}
+
+.educations div {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.educations div:hover > .delete-education {
+    opacity: 1;
+}
+
+.delete-education {
+    border: none;
+    opacity: 0;
+}
+
+.delete-education:hover {
+    color: crimson;
 }

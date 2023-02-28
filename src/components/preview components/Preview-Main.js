@@ -2,7 +2,7 @@ import React from "react";
 
 class Main extends React.Component {
     render() {
-        const { description, educations } = this.props;
+        const { description, educations, deleteEducation } = this.props;
 
         return (
             <div className="preview-main">
@@ -16,7 +16,7 @@ class Main extends React.Component {
                                 <p className="school-name">{education.school}</p>
                                 <p className="study-title">{education.title}</p>
                                 <p>{education.start} - {education.end}</p>
-                                <button>Delete <i className="fa-solid fa-trash"></i></button>
+                                <button className="delete-education" onClick={() => deleteEducation(education.id)}><i className="fa-solid fa-trash"></i></button>
                             </div>
                         )
                     })}

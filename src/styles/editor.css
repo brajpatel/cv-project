@@ -60,12 +60,6 @@ button {
     font-size: 1.2rem;
 }
 
-.delete-education:hover {
-    background: crimson;
-    color: #eaebea;
-    border-color: rgb(165, 16, 45);
-}
-
 .add-education:hover {
     background: rgb(46, 202, 46);
     color: #eaebea;

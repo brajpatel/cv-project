@@ -42,6 +42,11 @@ class Main extends React.Component {
         this.handleEmail = this.handleEmail.bind(this);
         this.handlePhone = this.handlePhone.bind(this);
         this.handleDescription = this.handleDescription.bind(this);
+        this.handleSchoolName = this.handleSchoolName.bind(this);
+        this.handleTitleOfStudy = this.handleTitleOfStudy.bind(this);
+        this.handleStudyStart = this.handleStudyStart.bind(this);
+        this.handleStudyEnd = this.handleStudyEnd.bind(this);
+        this.deleteEducation = this.deleteEducation.bind(this);
         this.addEducation = this.addEducation.bind(this);
     }
 
@@ -74,10 +79,50 @@ class Main extends React.Component {
     }
 
     handleSchoolName(e) {
-        this.setState({ education: { school: e.target.value } })
+        this.setState({
+            education: {
+                school: e.target.value,
+                id: this.state.education.id
+            }
+        })
     }
 
-    addEducation() {
+    handleTitleOfStudy(e) {
+        this.setState({
+            education: {
+                title: e.target.value,
+                id: this.state.education.id
+            }
+        })
+    }
+
+    handleStudyStart(e) {
+        this.setState({
+            education: {
+                start: e.target.value,
+                id: this.state.education.id
+            }
+        })
+    }
+
+    handleStudyEnd(e) {
+        this.setState({
+            education: {
+                end: e.target.value,
+                id: this.state.education.id
+            }
+        })
+    }
+
+    deleteEducation(educationId) {
+        let updatedEducations = this.state.educations.filter((education) => education.id !== educationId);
+
+        this.setState({ educations: updatedEducations });
+    }
+
+    addEducation(e) {
+        e.preventDefault();
+
         if(this.state.educations.length >= 3) return;
         
         this.setState({
@@ -93,7 +138,7 @@ class Main extends React.Component {
     }
 
     render() {
-        const { title, forename, surname, address, email, phone, description, educations } = this.state;
+        const { title, forename, surname, address, email, phone, description, education, educations } = this.state;
 
         return (
             <div>
@@ -108,7 +153,11 @@ class Main extends React.Component {
                         handleDescription={this.handleDescription}
                     />
                     <Education
+                        education={education}
                         handleSchoolName={this.handleSchoolName}
+                        handleTitleOfStudy={this.handleTitleOfStudy}
+                        handleStudyStart={this.handleStudyStart}
+                        handleStudyEnd={this.handleStudyEnd}
                         addEducation={this.addEducation}
                     />
                     
@@ -122,6 +171,7 @@ class Main extends React.Component {
                     phone={phone}
                     description={description}
                     educations={educations}
+                    deleteEducation={this.deleteEducation}
                 />
             </div>
         )
