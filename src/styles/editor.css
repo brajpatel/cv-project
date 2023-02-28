@@ -54,8 +54,20 @@ button {
     outline: none;
     cursor: pointer;
     padding: 6px 12px;
-    background-color: white;
+    background: white;
     border: 1px solid rgb(150, 150, 150);
     border-radius: 4px;
     font-size: 1.2rem;
+}
+
+.delete-education:hover {
+    background: crimson;
+    color: #eaebea;
+    border-color: rgb(165, 16, 45);
+}
+
+.add-education:hover {
+    background: rgb(46, 202, 46);
+    color: #eaebea;
+    border-color: rgb(20, 148, 20);
 }

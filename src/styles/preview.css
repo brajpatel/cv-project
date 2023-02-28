@@ -58,3 +58,7 @@
 .description {
     text-align: center;
 }
+
+.educations {
+    display: flex;
+}
