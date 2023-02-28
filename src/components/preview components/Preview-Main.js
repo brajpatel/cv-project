@@ -16,7 +16,7 @@ class Main extends React.Component {
                                 <p className="school-name">{education.school}</p>
                                 <p className="study-title">{education.title}</p>
                                 <p>{education.start} - {education.end}</p>
-                                <button className="delete-education" onClick={() => deleteEducation(education.id)}><i className="fa-solid fa-trash"></i></button>
+                                <button className="delete-education" onClick={() => deleteEducation(education.id)}><i class="fa-solid fa-arrow-right"></i> <i className="fa-solid fa-trash"></i></button>
                             </div>
                         )
                     })}

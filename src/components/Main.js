@@ -26,10 +26,24 @@ class Main extends React.Component {
             },
             educations: [
                 {
-                    school: 'Schoo Community College',
-                    title: 'A-Level Gamin',
+                    school: 'The Schoo of Bakery',
+                    title: 'Bakery Science',
                     start: '20/08/2019',
                     end: '18/06/2020',
+                    id: uniqid()
+                },
+                {
+                    school: 'Jujutsu High',
+                    title: 'Jujutsu Sorcerer',
+                    start: '22/08/2018',
+                    end: '09/07/2021',
+                    id: uniqid()
+                },
+                {
+                    school: 'Any May University',
+                    title: 'Anime Connoisseur',
+                    start: '31/07/2021',
+                    end: '26/06/2022',
                     id: uniqid()
                 }
             ]
@@ -82,15 +96,22 @@ class Main extends React.Component {
         this.setState({
             education: {
                 school: e.target.value,
+                title: this.state.education.title,
+                start: this.state.education.start,
+                end: this.state.education.end,
                 id: this.state.education.id
             }
         })
+
     }
 
     handleTitleOfStudy(e) {
         this.setState({
             education: {
+                school: this.state.education.school,
                 title: e.target.value,
+                start: this.state.education.start,
+                end: this.state.education.end,
                 id: this.state.education.id
             }
         })
@@ -99,7 +120,10 @@ class Main extends React.Component {
     handleStudyStart(e) {
         this.setState({
             education: {
+                school: this.state.education.school,
+                title: this.state.education.title,
                 start: e.target.value,
+                end: this.state.education.end,
                 id: this.state.education.id
             }
         })
@@ -108,6 +132,9 @@ class Main extends React.Component {
     handleStudyEnd(e) {
         this.setState({
             education: {
+                school: this.state.education.school,
+                title: this.state.education.title,
+                start: this.state.education.start,
                 end: e.target.value,
                 id: this.state.education.id
             }
@@ -120,10 +147,18 @@ class Main extends React.Component {
         this.setState({ educations: updatedEducations });
     }
 
-    addEducation(e) {
-        e.preventDefault();
+    addEducation() {
+        if(this.state.educations.length === 3) return;
 
-        if(this.state.educations.length >= 3) return;
+        if(
+            this.state.education.school === '' ||
+            this.state.education.title === '' ||
+            this.state.education.start === '' ||
+            this.state.education.end === ''
+            ) {
+                alert('Please fill in all the fields in the education section.');
+                return;
+            }
         
         this.setState({
             educations: this.state.educations.concat(this.state.education),
