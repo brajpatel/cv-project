@@ -7,12 +7,12 @@ import Main from './preview components/Preview-Main';
 
 class Preview extends React.Component {
     render() {
-        const { title, forename, surname, address, email, phone, description, educations, deleteEducation } = this.props;
+        const { title, forename, surname, address, email, phone, description, skills, deleteSkill, educations, deleteEducation } = this.props;
         
         return (
             <div className="cv-preview">
                 <Header title={title} forename={forename} surname={surname}/>
-                <Aside address={address} email={email} phone={phone}/>
+                <Aside address={address} email={email} phone={phone} skills={skills} deleteSkill={deleteSkill}/>
                 <Main description={description} educations={educations} deleteEducation={deleteEducation}/>
             </div>
         )

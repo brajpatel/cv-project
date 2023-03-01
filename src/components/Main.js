@@ -2,6 +2,7 @@ import '../styles/editor.css'
 import React from "react";
 import uniqid from "uniqid";
 import Personal from "./form components/Personal";
+import Skills from './form components/Skills';
 import Education from './form components/Education';
 import Preview from './Preview';
 
@@ -17,6 +18,36 @@ class Main extends React.Component {
             email: 'john-smith@email.com',
             phone: '07123456789',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nam libero justo laoreet. Platea dictumst vestibulum rhoncus est pellentesque. Aenean euismod elementum nisi quis eleifend. Consectetur adipiscing elit ut aliquam curs.',
+            skill: {
+                text: '',
+                id: uniqid()
+            },
+            skills: [
+                {
+                    text: 'Communication',
+                    id: uniqid()
+                },
+                {
+                    text: 'Teamwork',
+                    id: uniqid()
+                },
+                {
+                    text: '',
+                    id: uniqid()
+                },
+                {
+                    text: '',
+                    id: uniqid()
+                },
+                {
+                    text: '',
+                    id: uniqid()
+                },
+                {
+                    text: '',
+                    id: uniqid()
+                }
+            ],
             education: {
                 school: '',
                 title: '',
@@ -56,6 +87,9 @@ class Main extends React.Component {
         this.handleEmail = this.handleEmail.bind(this);
         this.handlePhone = this.handlePhone.bind(this);
         this.handleDescription = this.handleDescription.bind(this);
+        this.handleSkill = this.handleSkill.bind(this);
+        this.addSkill = this.addSkill.bind(this);
+        this.deleteSkill = this.deleteSkill.bind(this);
         this.handleSchoolName = this.handleSchoolName.bind(this);
         this.handleTitleOfStudy = this.handleTitleOfStudy.bind(this);
         this.handleStudyStart = this.handleStudyStart.bind(this);
@@ -90,6 +124,38 @@ class Main extends React.Component {
 
     handleDescription(e) {
         this.setState({ description: e.target.value })
+    }
+
+    handleSkill(e) {
+        this.setState({
+            skill: {
+                text: e.target.value,
+                id: this.state.skill.id
+            }
+        })
+    }
+
+    addSkill() {
+        if(this.state.skills.length >= 10) return;
+
+        if(this.state.skill.text === '') {
+            alert('Skill name cannot be blank');
+            return;
+        }
+
+        this.setState({
+            skills: this.state.skills.concat(this.state.skill),
+            skill: {
+                text: '',
+                id: uniqid()
+            }
+        })
+    }
+
+    deleteSkill(skillId) {
+        const updatedSkills = this.state.skills.filter((skill) => skill.id !== skillId)
+        
+        this.setState({ skills: updatedSkills })
     }
 
     handleSchoolName(e) {
@@ -141,12 +207,6 @@ class Main extends React.Component {
         })
     }
 
-    deleteEducation(educationId) {
-        let updatedEducations = this.state.educations.filter((education) => education.id !== educationId);
-
-        this.setState({ educations: updatedEducations });
-    }
-
     addEducation() {
         if(this.state.educations.length === 3) return;
 
@@ -172,8 +232,14 @@ class Main extends React.Component {
         })
     }
 
+    deleteEducation(educationId) {
+        const updatedEducations = this.state.educations.filter((education) => education.id !== educationId);
+
+        this.setState({ educations: updatedEducations });
+    }
+
     render() {
-        const { title, forename, surname, address, email, phone, description, education, educations } = this.state;
+        const { title, forename, surname, address, email, phone, description, skill, skills, education, educations } = this.state;
 
         return (
             <div>
@@ -186,6 +252,11 @@ class Main extends React.Component {
                         handleEmail={this.handleEmail}
                         handlePhone={this.handlePhone}
                         handleDescription={this.handleDescription}
+                    />
+                    <Skills
+                        skill={skill}
+                        handleSkill={this.handleSkill}
+                        addSkill={this.addSkill}
                     />
                     <Education
                         education={education}
@@ -205,6 +276,8 @@ class Main extends React.Component {
                     email={email}
                     phone={phone}
                     description={description}
+                    skills={skills}
+                    deleteSkill={this.deleteSkill}
                     educations={educations}
                     deleteEducation={this.deleteEducation}
                 />
