@@ -4,6 +4,7 @@ import uniqid from "uniqid";
 import Personal from "./form components/Personal";
 import Skills from './form components/Skills';
 import Education from './form components/Education';
+import Work from './form components/Work';
 import Preview from './Preview';
 
 class Main extends React.Component {
@@ -73,7 +74,15 @@ class Main extends React.Component {
                     end: '26/06/2022',
                     id: uniqid()
                 }
-            ]
+            ],
+            job: {
+                company: '',
+                position: '',
+                start: '',
+                end: '',
+                id: uniqid()
+            },
+            jobs: []
         }
 
         this.handleTitle = this.handleTitle.bind(this);
@@ -92,6 +101,8 @@ class Main extends React.Component {
         this.handleStudyEnd = this.handleStudyEnd.bind(this);
         this.deleteEducation = this.deleteEducation.bind(this);
         this.addEducation = this.addEducation.bind(this);
+
+        this.addWorkExperience = this.addWorkExperience.bind(this);
     }
 
     handleTitle(e) {
@@ -228,6 +239,58 @@ class Main extends React.Component {
         })
     }
 
+    handleCompanyName(e) {
+        this.setState({
+            job: {
+                company: e.target.value,
+                position: this.state.job.position,
+                start: this.state.job.start,
+                end: this.state.job.end,
+                id: this.state.job.id
+            }
+        })
+    }
+
+    handlePositionTitle(e) {
+        this.setState({
+            job: {
+                company: this.state.job.company,
+                position: e.target.value,
+                start: this.state.job.start,
+                end: this.state.job.end,
+                id: this.state.job.id
+            }
+        })
+    }
+
+    handleWorkStart(e) {
+        this.setState({
+            job: {
+                company: this.state.job.company,
+                position: this.state.job.position,
+                start: e.target.value,
+                end: this.state.job.end,
+                id: this.state.job.id
+            }
+        })
+    }
+
+    handleWorkEnd(e) {
+        this.setState({
+            job: {
+                company: this.state.job.company,
+                position: this.state.job.position,
+                start: this.state.job.start,
+                end: e.target.value,
+                id: this.state.job.id
+            }
+        })
+    }
+
+    addWorkExperience() {
+        return;
+    }
+
     deleteEducation(educationId) {
         const updatedEducations = this.state.educations.filter((education) => education.id !== educationId);
 
@@ -262,7 +325,13 @@ class Main extends React.Component {
                         handleStudyEnd={this.handleStudyEnd}
                         addEducation={this.addEducation}
                     />
-                    
+                    <Work
+                        handleCompanyName={this.handleCompanyName}
+                        handlePositionTitle={this.handlePositionTitle}
+                        handleWorkStart={this.handleWorkStart}
+                        handleWorkEnd={this.handleWorkEnd}
+                        addWorkExperience={this.addWorkExperience}
+                    />
                 </div>
                 <Preview
                     title={title}

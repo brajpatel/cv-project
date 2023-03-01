@@ -60,13 +60,11 @@ button {
     font-size: 1.2rem;
 }
 
-.add-skill i,
-.add-education i {
+button i {
     margin-left: 0.5rem;
 }
 
-.add-skill:hover,
-.add-education:hover {
+button:hover {
     background: rgb(46, 202, 46);
     color: #eaebea;
     border-color: rgb(20, 148, 20);
