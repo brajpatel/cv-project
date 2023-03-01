@@ -18,6 +18,18 @@ class Main extends React.Component {
                                 <p>{education.start} - {education.end}</p>
                                 <i className="fa-solid fa-trash delete-education" onClick={() => deleteEducation(education.id)}></i>
                             </div>
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
+                            // CHANGE AROUND THE EDUCATION STUFF BRUH
                         )
                     })}
                 </div>
@@ -25,12 +37,13 @@ class Main extends React.Component {
                 <div className="work-experiences">
                     {jobs.map((job) => {
                         return (
-                            <div key={job.id}>
-                                <p>{job.company}</p>
-                                <p>{job.position}</p>
-                                <p>{job.duties}</p>
-                                <p>{job.start} - {job.end}</p>
-                                <i className="fa-solid fa-trash delete-education" onClick={() => deleteWorkExperience(job.id)}></i>
+                            <div key={job.id} className="job">
+                                <div className="job-details">
+                                    <p><span className="job-position">{job.position}</span> - <span className="job-company">{job.company}</span></p>
+                                    <p className="job-dates">{job.start} - {job.end}</p>
+                                </div>
+                                <p className="job-duties">{job.duties}</p>
+                                <i className="fa-solid fa-trash delete-work-experience" onClick={() => deleteWorkExperience(job.id)}></i>
                             </div>
                         )
                     })}

@@ -7,8 +7,11 @@ class Aside extends React.Component {
         return (
             <div className="preview-aside">
                 <div className="personal-details">
+                    <h4>Address</h4>
                     <p>{address}</p>
+                    <h4>Email</h4>
                     <p>{email}</p>
+                    <h4>Phone</h4>
                     <p>{phone}</p>
                 </div>
                 <h3>Skills</h3>

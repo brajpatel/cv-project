@@ -76,14 +76,31 @@ class Main extends React.Component {
                 }
             ],
             job: {
-                company: '',
                 position: '',
+                company: '',
                 duties: '',
                 start: '',
                 end: '',
                 id: uniqid()
             },
-            jobs: []
+            jobs: [
+                {
+                    company: 'Cancer Research UK',
+                    position: 'Assistant Manager',
+                    duties: 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent sit amet congue lorem, in ultrices est. Aenean molestie nulla et eros ornare, et malesuada quam egestas. Vivamus condimentum sol.',
+                    start: '26/09/2022',
+                    end: '03/03/2023',
+                    id: uniqid()
+                },
+                {
+                    company: 'A Tech Company',
+                    position: 'Full Stack Developer',
+                    duties: 'Curabitur varius odio quam, at ornare est bibendum sed. Aenean lacinia rutrum enim lacinia consectetur. Sed est ante, accumsan in facilisis eu, tincidunt vel tortor. Suspendisse potenti nulla at este.',
+                    start: '31/10/2023',
+                    end: '03/05/2025',
+                    id: uniqid()
+                }
+            ]
         }
 
         this.handleTitle = this.handleTitle.bind(this);
@@ -100,14 +117,15 @@ class Main extends React.Component {
         this.handleTitleOfStudy = this.handleTitleOfStudy.bind(this);
         this.handleStudyStart = this.handleStudyStart.bind(this);
         this.handleStudyEnd = this.handleStudyEnd.bind(this);
-        this.deleteEducation = this.deleteEducation.bind(this);
         this.addEducation = this.addEducation.bind(this);
-        this.handleCompanyName = this.handleCompanyName.bind(this);
+        this.deleteEducation = this.deleteEducation.bind(this);
         this.handlePositionTitle = this.handlePositionTitle.bind(this);
+        this.handleCompanyName = this.handleCompanyName.bind(this);
         this.handlePositionDuties = this.handlePositionDuties.bind(this);
         this.handleWorkStart = this.handleWorkStart.bind(this);
         this.handleWorkEnd = this.handleWorkEnd.bind(this);
         this.addWorkExperience = this.addWorkExperience.bind(this);
+        this.deleteWorkExperience = this.deleteWorkExperience.bind(this);
     }
 
     handleTitle(e) {
@@ -250,11 +268,11 @@ class Main extends React.Component {
         this.setState({ educations: updatedEducations });
     }
 
-    handleCompanyName(e) {
+    handlePositionTitle(e) {
         this.setState({
             job: {
-                company: e.target.value,
-                position: this.state.job.position,
+                position: e.target.value,
+                company: this.state.job.company,
                 duties: this.state.job.duties,
                 start: this.state.job.start,
                 end: this.state.job.end,
@@ -263,11 +281,11 @@ class Main extends React.Component {
         })
     }
 
-    handlePositionTitle(e) {
+    handleCompanyName(e) {
         this.setState({
             job: {
-                company: this.state.job.company,
-                position: e.target.value,
+                position: this.state.job.position,
+                company: e.target.value,
                 duties: this.state.job.duties,
                 start: this.state.job.start,
                 end: this.state.job.end,
@@ -279,8 +297,8 @@ class Main extends React.Component {
     handlePositionDuties(e) {
         this.setState({
             job: {
+                position: this.state.job.position,
                 company: this.state.job.company,
-                position: this.state.job.duties,
                 duties: e.target.value,
                 start: this.state.job.start,
                 end: this.state.job.end,
@@ -292,8 +310,8 @@ class Main extends React.Component {
     handleWorkStart(e) {
         this.setState({
             job: {
-                company: this.state.job.company,
                 position: this.state.job.position,
+                company: this.state.job.company,
                 duties: this.state.job.duties,
                 start: e.target.value,
                 end: this.state.job.end,
@@ -305,8 +323,8 @@ class Main extends React.Component {
     handleWorkEnd(e) {
         this.setState({
             job: {
-                company: this.state.job.company,
                 position: this.state.job.position,
+                company: this.state.job.company,
                 duties: this.state.job.duties,
                 start: this.state.job.start,
                 end: e.target.value,
@@ -329,8 +347,8 @@ class Main extends React.Component {
         this.setState({
             jobs: this.state.jobs.concat(this.state.job),
             job: {
-                company: '',
                 position: '',
+                company: '',
                 duties: '',
                 start: '',
                 end: '',
