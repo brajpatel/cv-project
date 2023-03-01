@@ -288,7 +288,15 @@ class Main extends React.Component {
     }
 
     addWorkExperience() {
-        return;
+        if(
+            this.state.job.company === '' ||
+            this.state.job.position === '' ||
+            this.state.job.start === '' ||
+            this.state.job.end === ''
+            ) {
+                alert('Please fill in all the fields in the work experience.');
+                return;
+            }
     }
 
     deleteEducation(educationId) {
