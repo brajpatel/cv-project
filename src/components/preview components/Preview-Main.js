@@ -2,7 +2,7 @@ import React from "react";
 
 class Main extends React.Component {
     render() {
-        const { description, educations, deleteEducation } = this.props;
+        const { description, educations, deleteEducation, jobs, deleteWorkExperience } = this.props;
 
         return (
             <div className="preview-main">
@@ -22,6 +22,19 @@ class Main extends React.Component {
                     })}
                 </div>
                 <h3>Work Experience</h3>
+                <div className="work-experiences">
+                    {jobs.map((job) => {
+                        return (
+                            <div key={job.id}>
+                                <p>{job.company}</p>
+                                <p>{job.position}</p>
+                                <p>{job.duties}</p>
+                                <p>{job.start} - {job.end}</p>
+                                <i className="fa-solid fa-trash delete-education" onClick={() => deleteWorkExperience(job.id)}></i>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         )
     }
