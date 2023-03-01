@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 1rem;
 }
 
 .personal-details {
@@ -56,20 +56,27 @@
 .skills {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    padding: 0 0.6rem 0 1rem;
 }
 
 .skill {
     font-size: 1.2rem;
+    word-break: break-all;
+    position: relative;
 }
 
-.skill i {
+.delete-skill {
     cursor: pointer;
     margin-left: 0.4rem;
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    transform: translateY(-50%);
 }
 
-.skill i:hover {
-    color: crimson;
+.skill:hover > .delete-skill {
+    opacity: 1;
 }
 
 .preview-main {
@@ -120,16 +127,23 @@
     font-weight: bold;
 }
 
+.delete-skill,
 .delete-education {
+    cursor: pointer;
+    font-size: 1.2rem;
     background: transparent;
     border: none;
     opacity: 0;
-    position: absolute;
-    top: 50%;
-    right: -35px;
-    transform: translateY(-50%);
 }
 
+.delete-skill:hover,
 .delete-education:hover {
     color: crimson;
+}
+
+.delete-education {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
 }

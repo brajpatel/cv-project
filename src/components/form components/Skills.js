@@ -6,7 +6,7 @@ class Skills extends React.Component {
 
         return (
             <div>
-                <h2>Skills (up to 10)</h2>
+                <h2>Skills (up to 12)</h2>
                 <input onChange={(e) => handleSkill(e)} value={skill.text} placeholder="Skill Name" type="text"></input>
                 <button className="add-skill" onClick={addSkill}>Add Skill<i className="fa-solid fa-pencil"></i></button>
             </div>

@@ -15,7 +15,7 @@ class Aside extends React.Component {
                 <ol className="skills">
                     {skills.map((skill) => {
                         return (
-                            <li key={skill.id} className="skill">{skill.text}<i className="fa-solid fa-trash" onClick={() => deleteSkill(skill.id)}></i></li>
+                            <li key={skill.id} className="skill">{skill.text}<i className="fa-solid fa-trash delete-skill" onClick={() => deleteSkill(skill.id)}></i></li>
                         )
                     })}
                 </ol>

@@ -32,19 +32,15 @@ class Main extends React.Component {
                     id: uniqid()
                 },
                 {
-                    text: '',
+                    text: 'Problem Solving',
                     id: uniqid()
                 },
                 {
-                    text: '',
+                    text: 'Listening',
                     id: uniqid()
                 },
                 {
-                    text: '',
-                    id: uniqid()
-                },
-                {
-                    text: '',
+                    text: '65wpm Typing Speed',
                     id: uniqid()
                 }
             ],
@@ -136,7 +132,7 @@ class Main extends React.Component {
     }
 
     addSkill() {
-        if(this.state.skills.length >= 10) return;
+        if(this.state.skills.length >= 12) return;
 
         if(this.state.skill.text === '') {
             alert('Skill name cannot be blank');
