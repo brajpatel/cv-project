@@ -8,4 +8,4 @@ This CV Creator is the first project created for The Odin Project's [React JS](h
 These are some of the challenges I faced while making this project:
 - Remembering to bind each event handler while wondering why the event wouldn't work!
 ## View Project
-You can view the cv creator live by clicking [here](https://brajpatel.github.io/cv-project/).
+You can view the CV Creator live by clicking [here](https://brajpatel.github.io/cv-project/).
