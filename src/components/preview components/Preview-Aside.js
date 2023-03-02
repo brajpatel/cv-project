@@ -15,13 +15,13 @@ class Aside extends React.Component {
                     <p>{phone}</p>
                 </div>
                 <h3>Skills</h3>
-                <ol className="skills">
+                <ul className="skills">
                     {skills.map((skill) => {
                         return (
                             <li key={skill.id} className="skill">{skill.text}<i className="fa-solid fa-trash delete-skill" onClick={() => deleteSkill(skill.id)}></i></li>
                         )
                     })}
-                </ol>
+                </ul>
             </div>
         )
     }

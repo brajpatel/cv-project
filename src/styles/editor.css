@@ -1,5 +1,5 @@
 .cv-editor {
-    width: 50vw;
+    width: 50%;
     background: #f7f7f7;
     margin: 2.5rem auto;
     border-radius: 8px;
@@ -68,4 +68,16 @@ button:hover {
     background: rgb(46, 202, 46);
     color: #eaebea;
     border-color: rgb(20, 148, 20);
+}
+
+@media (max-width: 1200px) {
+    .cv-editor {
+        width: 65%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cv-editor {
+        width: 75%;
+    }
 }
