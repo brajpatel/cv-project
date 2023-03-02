@@ -13,23 +13,11 @@ class Main extends React.Component {
                     {educations.map((education) => {
                         return (
                             <div key={education.id}>
-                                <p className="school-name">{education.school}</p>
                                 <p className="study-title">{education.title}</p>
-                                <p>{education.start} - {education.end}</p>
+                                <p className="school-name">{education.school}</p>
+                                <p className="education-dates">{education.start} - {education.end}</p>
                                 <i className="fa-solid fa-trash delete-education" onClick={() => deleteEducation(education.id)}></i>
                             </div>
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
-                            // CHANGE AROUND THE EDUCATION STUFF BRUH
                         )
                     })}
                 </div>

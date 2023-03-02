@@ -124,11 +124,12 @@
 }
 
 .school-name {
-    font-size: 1.2rem;
+    color: #333333;
 }
 
 .study-title {
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .work-experiences {
@@ -156,15 +157,16 @@
 }
 
 .job-company {
-    color: #555555;
-}
-
-.job-dates {
-    font-style: italic;
+    color: #333333;
 }
 
 .job-duties {
     text-align: center;
+}
+
+.education-dates,
+.job-dates {
+    font-style: italic;
 }
 
 .job:hover > .delete-work-experience {

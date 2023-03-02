@@ -46,30 +46,30 @@ class Main extends React.Component {
                 }
             ],
             education: {
-                school: '',
                 title: '',
+                school: '',
                 start: '',
                 end: '',
                 id: uniqid()
             },
             educations: [
                 {
-                    school: 'The Schoo of Bakery',
                     title: 'Bakery Science',
+                    school: 'The Schoo of Bakery',
                     start: '20/08/2019',
                     end: '18/06/2020',
                     id: uniqid()
                 },
                 {
-                    school: 'Jujutsu High',
                     title: 'Jujutsu Sorcerer',
+                    school: 'Jujutsu High',
                     start: '22/08/2018',
                     end: '09/07/2021',
                     id: uniqid()
                 },
                 {
-                    school: 'Any May University',
                     title: 'Anime Connoisseur',
+                    school: 'Any May University',
                     start: '31/07/2021',
                     end: '26/06/2022',
                     id: uniqid()
@@ -113,8 +113,8 @@ class Main extends React.Component {
         this.handleSkill = this.handleSkill.bind(this);
         this.addSkill = this.addSkill.bind(this);
         this.deleteSkill = this.deleteSkill.bind(this);
-        this.handleSchoolName = this.handleSchoolName.bind(this);
         this.handleTitleOfStudy = this.handleTitleOfStudy.bind(this);
+        this.handleSchoolName = this.handleSchoolName.bind(this);
         this.handleStudyStart = this.handleStudyStart.bind(this);
         this.handleStudyEnd = this.handleStudyEnd.bind(this);
         this.addEducation = this.addEducation.bind(this);
@@ -188,36 +188,36 @@ class Main extends React.Component {
         this.setState({ skills: updatedSkills })
     }
 
-    handleSchoolName(e) {
-        this.setState({
-            education: {
-                school: e.target.value,
-                title: this.state.education.title,
-                start: this.state.education.start,
-                end: this.state.education.end,
-                id: this.state.education.id
-            }
-        })
-
-    }
-
     handleTitleOfStudy(e) {
         this.setState({
             education: {
-                school: this.state.education.school,
                 title: e.target.value,
+                school: this.state.education.school,
                 start: this.state.education.start,
                 end: this.state.education.end,
                 id: this.state.education.id
             }
         })
     }
+
+    handleSchoolName(e) {
+        this.setState({
+            education: {
+                title: this.state.education.title,
+                school: e.target.value,
+                start: this.state.education.start,
+                end: this.state.education.end,
+                id: this.state.education.id
+            }
+        })
+    }
+
 
     handleStudyStart(e) {
         this.setState({
             education: {
-                school: this.state.education.school,
                 title: this.state.education.title,
+                school: this.state.education.school,
                 start: e.target.value,
                 end: this.state.education.end,
                 id: this.state.education.id
@@ -228,8 +228,8 @@ class Main extends React.Component {
     handleStudyEnd(e) {
         this.setState({
             education: {
-                school: this.state.education.school,
                 title: this.state.education.title,
+                school: this.state.education.school,
                 start: this.state.education.start,
                 end: e.target.value,
                 id: this.state.education.id
@@ -241,8 +241,8 @@ class Main extends React.Component {
         if(this.state.educations.length === 3) return;
 
         if(
-            this.state.education.school === '' ||
             this.state.education.title === '' ||
+            this.state.education.school === '' ||
             this.state.education.start === '' ||
             this.state.education.end === ''
             ) {
@@ -253,8 +253,8 @@ class Main extends React.Component {
         this.setState({
             educations: this.state.educations.concat(this.state.education),
             education: {
-                school: '',
                 title: '',
+                school: '',
                 start: '',
                 end: '',
                 id: uniqid()
@@ -335,8 +335,8 @@ class Main extends React.Component {
 
     addWorkExperience() {
         if(
-            this.state.job.company === '' ||
             this.state.job.position === '' ||
+            this.state.job.company === '' ||
             this.state.job.start === '' ||
             this.state.job.end === ''
             ) {
