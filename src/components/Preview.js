@@ -5,18 +5,16 @@ import Aside from './preview components/Preview-Aside';
 import Main from './preview components/Preview-Main';
 
 
-class Preview extends React.Component {
-    render() {
-        const { title, forename, surname, address, email, phone, description, skills, deleteSkill, educations, deleteEducation, jobs, deleteWorkExperience } = this.props;
+function Preview(props) {
+    const { title, forename, surname, address, email, phone, description, skills, deleteSkill, educations, deleteEducation, jobs, deleteWorkExperience } = props;
         
-        return (
-            <div className="cv-preview">
-                <Header title={title} forename={forename} surname={surname}/>
-                <Aside address={address} email={email} phone={phone} skills={skills} deleteSkill={deleteSkill}/>
-                <Main description={description} educations={educations} deleteEducation={deleteEducation} jobs={jobs} deleteWorkExperience={deleteWorkExperience}/>
-            </div>
-        )
-    }
+    return (
+        <div className="cv-preview">
+            <Header title={title} forename={forename} surname={surname}/>
+            <Aside address={address} email={email} phone={phone} skills={skills} deleteSkill={deleteSkill}/>
+            <Main description={description} educations={educations} deleteEducation={deleteEducation} jobs={jobs} deleteWorkExperience={deleteWorkExperience}/>
+        </div>
+    )
 }
 
 export default Preview;
