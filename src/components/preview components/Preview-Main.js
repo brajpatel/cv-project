@@ -1,8 +1,7 @@
 import React from "react";
 
-class Main extends React.Component {
-    render() {
-        const { description, educations, deleteEducation, jobs, deleteWorkExperience } = this.props;
+function Main(props) {
+    const { description, educations, deleteEducation, jobs, deleteWorkExperience } = props;
 
         return (
             <div className="preview-main">
@@ -38,7 +37,6 @@ class Main extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Main;
